@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="監視カメラ映像の異変を見つけて報告するブラウザゲームのプロトタイプ">
+    <title>Observer's Desk</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="topbar"><div><p class="eyebrow">NIGHT SHIFT / PROTOTYPE</p><h1>OBSERVER'S DESK</h1></div><div class="shift-data"><span>FOUND <b id="found">0</b> / 4</span><strong id="timer">03:00</strong></div></header>
+      <section class="game-layout">
+        <aside class="camera-list"><p class="panel-label">CAMERAS</p><button class="camera-button active" data-camera="0"><span class="camera-dot"></span>CAM 01 — DRESSING ROOM</button><button class="camera-button" data-camera="1"><span class="camera-dot"></span>CAM 02 — LOUNGE</button><div class="how-to"><p class="panel-label">HOW TO PLAY</p><p>画面の金色マーカーを選び、正しいカテゴリで報告します。</p><p>ベース画像と透過PNG差分をレイヤーで重ねる構造です。</p></div></aside>
+        <section class="feed-panel"><div class="camera-feed" id="feed"><img id="camera-image" src="assets/dressing-room.png" alt="更衣室を映す監視カメラ映像"><div class="scanlines"></div><span class="recording">● REC</span><span class="feed-caption" id="caption">CAM 01 — DRESSING ROOM / LIVE</span><div id="markers"></div></div><p class="status-message" id="status" role="status">映像を確認して、異変を報告してください。</p></section>
+        <aside class="report-panel"><p class="panel-label">REPORT ANOMALY</p><h2>異変カテゴリ</h2><div class="category-list" id="categories"><button class="selected">人物</button><button>小物</button><button>照明</button><button>衣装</button></div><div class="legend"><span>●</span> マーカーを見つけてクリック</div><button class="restart" id="restart">シフトをやり直す</button></aside>
+      </section>
+    </main>
+    <script src="game.js"></script>
+  </body>
+</html>
